@@ -1,0 +1,33 @@
+body {
+    background-color: #F2F2F2;
+    margin: 0% 5% 5%;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.title_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f2630;
+    height: 50px;
+}
+
+.title_text {
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+.flex_display {
+    display: flex;
+}
+
+.filter_by_year_div {
+    padding-top: 10px;
+}
+
+

@@ -1,6 +1,8 @@
 body {
-    background-color: #F2F2F2;
+    background-color: black;
     margin: 0% 5% 5%;
+    color: #FFFFFF;
+
 }
 
 .mainContainer {
@@ -30,4 +32,108 @@ body {
     padding-top: 10px;
 }
 
+.dark-theme .Select-menu-outer {
+    background-color: #333333;
+}
 
+.dark-theme .Select-option {
+    background-color: #222222;
+    color: #FFFFFF;
+}
+
+
+.dark-theme .Select-menu-outer {
+    border-color: #FFFFFF;
+}
+
+
+.dark-theme .Select--single > .Select-control .Select-value {
+    color: #FFFFFF;
+}
+
+.dark-theme .Select-control {
+    background-color: #222222 !important;
+    color: #ffffff !important;
+}
+
+.dark-theme .Select-placeholder {
+    color: #FFFFFF;
+}
+
+.dark-theme .Select-control .Select-value-label {
+    color: #ffffff !important;
+}
+
+.dark-theme2 .DateInput__label {
+    color: #333333 !important;
+}
+
+.DateRangePickerInput {
+    background-color: #222222;
+}
+
+
+.dark-theme2 .DateInput .DateInput_input {
+    background-color: #333333 !important;
+    color: #FFFFFF !important;
+}
+
+.previous-next-container .first-page {
+    color: #FFFFFF !important;
+}
+
+.previous-page {
+    color: #FFFFFF !important;
+}
+
+.current-page {
+    color: #FFFFFF !important;
+}
+
+.current-page-container {
+    color: #FFFFFF !important;
+}
+
+.last-page {
+    color: #FFFFFF !important;
+}
+
+.next-page {
+    color: #FFFFFF !important;
+}
+
+.page-number {
+    color: #FFFFFF !important;
+}
+
+.dark-theme2 .DateInput__input {
+    border-color: #FFFFFF !important;
+}
+
+.dark-theme2 .DateInput__display-text {
+    color: #FFFFFF !important;
+}
+
+.mileage-slider .rc-slider-rail {
+    background-color: #eee;
+}
+
+.mileage-slider .rc-slider-track {
+    background-color: #e91e63;
+}
+
+.mileage-slider .rc-slider-handle {
+    background-color: #e91e63;
+}
+
+.mileage-slider1 .rc-slider-rail {
+    background-color: #eee;
+}
+
+.mileage-slider1 .rc-slider-track {
+    background-color: #00FF00;
+}
+
+.mileage-slider1 .rc-slider-handle {
+    background-color: #00FF00;
+}

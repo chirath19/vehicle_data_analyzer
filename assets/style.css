@@ -137,3 +137,113 @@ body {
 .mileage-slider1 .rc-slider-handle {
     background-color: #00FF00;
 }
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 7.5rem;
+    padding: 2rem 1rem;
+    /* background-color: #f8f9fa; */
+    z-index: 1050;
+    transition: width 0.3s ease-in-out;
+    background-color: black;
+}
+
+/* when the user hovers on the sidebar, expand it */
+.sidebar:hover {
+    width: 29.5rem;
+}
+
+/* make sure the contents of the navlink don't wrap when navbar collapses */
+.sidebar .nav-link {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* fix the width of the icons */
+.sidebar .nav-link i {
+    width: 1rem;
+}
+
+/* hide the navlink labels by default */
+.sidebar .nav-link span {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+/* when the sidebar is hovered, reveal the labels */
+.sidebar:hover .nav-link span {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* container for the sidebar header. make sure the contents don't wrap when
+ * the sidebar is collapsed.
+ */
+.sidebar-header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@font-face {
+    font-family: "garamond";
+}
+
+.nav-link.active {
+    background-color: #0084d6 !important;
+    color: #fff !important;
+    box-shadow: 0 2px 4px 0 rgba(32, 121, 255, 0.308) !important;
+}
+
+.nav-link.active:hover {
+    color: #fff !important;
+}
+
+.nav-link:hover {
+    color: #0084d6 !important;
+}
+
+.image_title {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+}
+
+.icon_title {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #1f2630;
+    font-weight: bold;
+    color: white;
+}
+
+td {
+    font-size: 14px;
+    color: pink;
+    border: 1px solid #666;
+}

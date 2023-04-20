@@ -1,0 +1,62 @@
+type_of_Vehicle,Brand Name,Model Name,Other Name,price,depreciation,reg_Date,mileage,road_Tax,dereg_Value,COE,engine_Cap,curb_Weight,transmission,OMV,ARF,fuel_Type
+Mid-Sized Sedan,Toyota,Corolla,  Altis 1.6A Elegance,"$83,800","$13,060 /yr
+View models with similar depre","01-Nov-2018
+(5yrs 6mths 16days COE left)","57,000 km (12.8k /yr)",$742 /yr,"$32,747 as of today (change)","$28,457","1,598 cc","1,230 kg",Auto,"$21,858","$22,602",
+MPV,Toyota,Previa,  2.4A (COE till 05/2029),"$74,800","$12,200 /yr","22-Mar-2010
+(6yrs 1mth 16days COE left)",N.A.,"$2,129 /yr","$24,258 as of today (change)","$39,563","2,362 cc","1,845 kg",Auto,"$35,783","$35,783",
+Sports Car,Porsche,Cayman,  R 3.4A PDK (COE till 04/2031),"$208,000","$25,850 /yr","17-Feb-2012
+(8yrs 15days COE left)","130,000 km (11.6k /yr)","$3,682 /yr","$38,073 as of today (change)","$47,316","3,436 cc","1,395 kg",Auto,"$93,744","$93,744",
+SUV,Porsche,Macan,  2.0A PDK,"$256,888","$32,780 /yr
+View models with similar depre","16-Oct-2019
+(6yrs 6mths COE left)","50,000 km (14.3k /yr)","$1,194 /yr","$92,265 as of today (change)","$41,361","1,984 cc","1,795 kg",Auto,"$63,964","$87,136",
+MPV,Toyota,Alphard,  2.4A (COE till 01/2029),"$86,800","$14,960 /yr","08-Oct-2009
+(5yrs 9mths 16days COE left)","145,000 km (10.7k /yr)","$2,293 /yr","$18,183 as of today (change)","$31,335","2,362 cc","1,920 kg",Auto,"$44,006","$44,006",
+Mid-Sized Sedan,Toyota,Vios,  1.5A E (COE till 02/2024),"$11,000","$12,830 /yr","23-Feb-2009
+(10mths 7days COE left)",N.A.,"$1,026 /yr","$2,206 as of today (change)","$12,864","1,497 cc","1,095 kg",Auto,"$11,900","$11,900",
+Mid-Sized Sedan,Mitsubishi,Lancer,  EX 1.6A,"$44,800","$12,870 /yr
+View models with similar depre","29-Mar-2016
+(2yrs 11mths 13days COE left)",N.A.,$738 /yr,"$21,433 as of today (change)","$45,000","1,590 cc","1,284 kg",Auto,"$13,571","$13,571",
+Luxury Sedan,Mercedes-Benz,Saloon, A-Class  A200 AMG Line,"$155,800","$18,210 /yr
+View models with similar depre","18-Dec-2020
+(7yrs 8mths 2days COE left)","35,000 km (15.1k /yr)",$586 /yr,"$58,446 as of today (change)","$45,012","1,332 cc","1,385 kg",Auto,"$28,456","$31,839",
+SUV,Audi,Q2,  1.4A TFSI CoD S-tronic,"$99,800","$15,210 /yr
+View models with similar depre","13-Dec-2018
+(5yrs 7mths 27days COE left)","63,000 km (14.5k /yr)",$624 /yr,"$37,993 as of today (change)","$31,001","1,395 cc","1,355 kg",Auto,"$25,170","$27,238",
+Truck,Nissan,Cabstar, ,"$49,800","$11,920 /yr
+View models with similar depre","19-Jun-2017
+(4yrs 2mths 3days COE left)",N.A.,N.A.,"$16,086 as of today (change)","$38,501","2,953 cc","1,800 kg",Manual,"$26,468","$1,324",['Diesel']
+Truck,Mitsubishi,Fuso,  Canter FEB21,"$47,800","$19,110 /yr
+View models with similar depre","15-Oct-2015
+(2yrs 5mths 29days COE left)",N.A.,N.A.,"$11,328 as of today (change)","$45,289","2,998 cc","2,500 kg",Auto,"$28,745","$1,438",['Diesel']
+Mid-Sized Sedan,Kia,Cerato,  1.6A EX,"$78,000","$12,420 /yr
+View models with similar depre","03-Jan-2019
+(5yrs 8mths 18days COE left)","88,000 km (20.6k /yr)",$738 /yr,"$25,038 as of today (change)","$25,556","1,591 cc","1,287 kg",Auto,"$13,882","$13,882",
+Sports Car,Porsche,Cayman,  2.7A Tip (COE till 06/2028),"$99,800","$19,150 /yr","30-Jun-2008
+(5yrs 2mths 14days COE left)","57,112 km (3.9k /yr)","$3,027 /yr","$19,753 as of today (change)","$37,906","2,687 cc","1,435 kg",Auto,"$82,742","$82,742",
+Sports Car,Honda,Civic,  Type R 2.0M (COE till 06/2027),"$94,800","$22,660 /yr","21-Jun-2007
+(4yrs 2mths 5days COE left)","188,000 km (11.9k /yr)","$1,815 /yr","$22,628 as of today (change)","$54,088","1,998 cc","1,270 kg",Manual,"$27,173","$29,891",
+MPV,Mazda,Biante,  2.0A,"$64,800","$17,600 /yr
+View models with similar depre","19-May-2016
+(3yrs 1mth 3days COE left)","100,000 km (14.5k /yr)","$1,210 /yr","$29,265 as of today (change)","$51,010","1,998 cc","1,664 kg",Auto,"$20,535","$20,749",
+Hatchback,Volkswagen,Golf,  1.4A TSI Comfortline,"$92,988","$14,320 /yr
+View models with similar depre","31-Jan-2019
+(5yrs 9mths 15days COE left)","56,100 km (13.3k /yr)",$624 /yr,"$30,107 as of today (change)","$26,170","1,395 cc","1,270 kg",Auto,"$19,904","$19,904",
+Sports Car,Mercedes-Benz,SLK200ML, SLK-Class  (COE till 04/2029),"$59,800",N.A.,"26-Dec-2000
+(6yrs 15days COE left)",N.A.,"$1,815 /yr",N.A.,"$35,411","1,998 cc",N.A.,Auto,"$43,842","$61,379",
+MPV,Honda,Odyssey,  2.4A EXV-S Sunroof,"$84,000","$19,670 /yr
+View models with similar depre","26-Aug-2016
+(3yrs 4mths 10days COE left)","81,734 km (12.3k /yr)","$1,630 /yr","$42,663 as of today (change)","$57,903","2,356 cc","1,855 kg",Auto,"$31,189","$35,665",
+SUV,Honda,Vezel,  1.5A X,"$53,800","$13,990 /yr
+View models with similar depre","08-Sep-2016
+(3yrs 4mths 23days COE left)",N.A.,$682 /yr,"$26,128 as of today (change)","$53,000","1,496 cc","1,190 kg",Auto,"$21,767","$12,474",
+Sports Car,MINI,Cooper,  S 1.6A Sunroof (COE till 08/2030),"$82,800","$11,220 /yr","30-Aug-2010
+(7yrs 4mths 14days COE left)",N.A.,$965 /yr,"$23,750 as of today (change)","$32,190","1,598 cc","1,155 kg",Auto,"$28,305","$28,305",
+Luxury Sedan,Mercedes-Benz,CLA200, CLA-Class  AMG Line Premium Plus,"$247,988","$23,710 /yr
+View models with similar depre","18-Aug-2022
+(9yrs 4mths 2days COE left)",66 km,$586 /yr,"$139,527 as of today (change)","$107,001","1,332 cc","1,435 kg",Auto,"$43,336","$52,671",
+Sports Car,Volkswagen,Scirocco,  GP 1.4A TSI,"$73,000","$15,740 /yr
+View models with similar depre","27-Apr-2017
+(4yrs 11days COE left)","76,000 km (12.7k /yr)",$620 /yr,"$33,811 as of today (change)","$53,001","1,390 cc","1,245 kg",Auto,"$19,071","$19,071",
+Hatchback,Volkswagen,Golf,  1.4A TSI R-Line Highline Sunroof,"$129,800","$15,250 /yr
+View models with similar depre","23-Nov-2020
+(7yrs 7mths 7days COE left)","14,885 km (6.2k /yr)",$624 /yr,"$49,308 as of today (change)","$37,690","1,395 cc","1,270 kg",Auto,"$25,354","$27,496",

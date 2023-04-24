@@ -255,39 +255,6 @@ layout = html.Div([
             ]),
         ], className="g-3"),
 
-        html.Div([
-            html.Div(children=[
-                html.Div([
-                    "Date Range : ",
-                    dcc.DatePickerRange(
-                        id='my-date-picker-range_graph2',
-                        min_date_allowed=df['Posted Date'].min(),
-                        max_date_allowed=df['Posted Date'].max(),
-                        initial_visible_month=df['Posted Date'].max(),
-                        start_date=df['Posted Date'].min(),
-                        end_date=df['Posted Date'].max(),
-                        className='dark-theme2'
-                    ),
-                ], className='col-md-4', style={'padding-top': '10px', 'color': 'lightgrey'}),
-
-                html.Div([
-                    "Brand Name: ",
-                    dcc.Dropdown(
-                        id='brand_dropdown',
-                        options=[{'label': 'All', 'value': 'all'}] + brand_names,
-                        value='all',
-                        className='dark-theme',
-                        placeholder="Select Brand"
-                    ),
-                ], className='col-md-6', style={'color': 'lightgrey'}),
-
-                # Bar chart of vehicle prices
-                html.Div([
-                    dcc.Graph(id='vehicle-price-bar-chart-2')
-                ]),
-            ], className="g-3"),
-        ], className='col-md-12')
-
     ], className='container-fluid', style={'border': '2px solid black', 'border-radius': '5px', 'padding-top': '10px'})
 ], className='container-fluid bg-dark')
 
@@ -384,46 +351,6 @@ def update_vehicle_price_bar_chart(status, start_date, end_date):
                                text=vehicle_type_counts.values, textposition='auto'))
     else:
         filtered_df = df[(df['Vehicle Status'] == status)]
-        vehicle_type_counts = filtered_df['Vehicle Type'].value_counts()
-        fig = go.Figure(go.Bar(x=vehicle_type_counts.index, y=vehicle_type_counts.values,
-                               text=vehicle_type_counts.values, textposition='auto'))
-
-    fig.update_layout(
-        xaxis_title="Vehicle Type",
-        yaxis_title="Count",
-        plot_bgcolor='rgba(0,0,0,0)',
-        paper_bgcolor='rgba(0,0,0,0)',
-
-        margin=dict(l=20, r=20, t=20, b=20),
-        template='plotly_white',
-        autosize=True,
-        font=dict(family="Arial, sans-serif", size=14, color="#7f7f7f"))
-
-    fig.update_xaxes(showgrid=False, zeroline=False)
-    fig.update_yaxes(showgrid=False, zeroline=False)
-
-    return fig
-
-
-@app.callback(
-    Output('vehicle-price-bar-chart-2', 'figure'),
-    [
-        Input('brand_dropdown', 'value'),
-        Input('my-date-picker-range_graph2', 'start_date'),
-        Input('my-date-picker-range_graph2', 'end_date'), ]
-)
-def update_vehicle_price_bar_chart2(brand, start_date, end_date):
-    if start_date is None or end_date is None:
-        return []
-    date_range = [pd.to_datetime(start_date), pd.to_datetime(end_date)]
-    filtered_df = df.loc[df['Posted Date'].between(*date_range)]
-
-    if brand == 'all':
-        vehicle_type_counts = filtered_df['Vehicle Type'].value_counts()
-        fig = go.Figure(go.Bar(x=vehicle_type_counts.index, y=vehicle_type_counts.values,
-                               text=vehicle_type_counts.values, textposition='auto'))
-    else:
-        filtered_df = df[(df['Brand Name'] == brand)]
         vehicle_type_counts = filtered_df['Vehicle Type'].value_counts()
         fig = go.Figure(go.Bar(x=vehicle_type_counts.index, y=vehicle_type_counts.values,
                                text=vehicle_type_counts.values, textposition='auto'))

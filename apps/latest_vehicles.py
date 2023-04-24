@@ -348,9 +348,10 @@ link_style = {
      Input('clear_button', 'n_clicks')],
     [State('first_dropdown-1', 'value'),
      State('first_dropdown-2', 'value'),
-     State('first_dropdown-3', 'value')]
+     State('first_dropdown-3', 'value')],
+    prevent_initial_call=True
 )
-def update_comparison_table(first_dropdown1_value, first_dropdown2_value, first_dropdown3_value):
+def update_comparison_table(n_clicks, n_clicks2, first_dropdown1_value, first_dropdown2_value, first_dropdown3_value):
     global selected_vehicles
 
     ctx = dash.callback_context

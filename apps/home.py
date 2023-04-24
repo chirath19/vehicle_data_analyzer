@@ -21,8 +21,6 @@ df['Posted Date'] = pd.to_datetime(df['Posted Date'])
 df = df.sort_values(by='Posted Date', ascending=False)
 number_of_vehicles = [{'label': str(i), 'value': i} for i in [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60]]
 df['Mileage (Km)'].fillna(0, inplace=True)
-
-print(brand_names)
 layout = html.Div([
 
     html.Div([

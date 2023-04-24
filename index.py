@@ -3,8 +3,6 @@ from dash import html, Input, Output, dcc
 
 # Connect to main app.py file
 from app import app
-from app import server
-
 from apps import home, latest_vehicles
 
 navbar = html.Div(
@@ -27,7 +25,7 @@ navbar = html.Div(
                 ),
                 dbc.NavLink([html.Div([
                     html.I(className="fa-solid fa-gauge"),
-                    html.Span("Newest Vehicles", style={'margin-top': '3px', 'padding-left': '10px'})],
+                    html.Span("Advanced Details", style={'margin-top': '3px', 'padding-left': '10px'})],
                     className='icon_title')],
                     href="/apps/latest_vehicles",
                     active="exact",

@@ -291,11 +291,52 @@ def update_third_dropdown3_options(selected_brand):
 selected_vehicles = []
 
 header_row = html.Tr([
-    html.Th('Type of Vehicle'),
-    html.Th('Brand Name'),
-    html.Th('Model Name'),
-    html.Th('Other Name')
+    html.Th('Posted Date', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('Last Updated Date', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('Type of Vehicle', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('Brand Name', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('Model Name', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('Other Name', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('price', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('depreciation', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('reg_Date', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('mileage', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('road_Tax', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('dereg_Value', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('COE', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('engine_Cap', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('curb_Weight', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('transmission', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('OMV', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('ARF', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('fuel_Type', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('dealers_names', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('Vehicle Link', style={'font-weight': 'bold', 'font-size': '16px'}),
+    html.Th('dealers_links', style={'font-weight': 'bold', 'font-size': '16px'}),
+
 ])
+
+table_style = {
+    'overflowX': 'auto',
+    'width': '100%',
+    'white-space': 'nowrap',
+    'table-layout': 'auto'
+}
+
+cell_style = {
+    'padding': '12px',
+    'border-bottom': '1px solid #ddd',
+}
+
+header_style = {
+    'background-color': '#f2f2f2',
+}
+
+link_style = {
+    'color': '#007bff',
+    'text-decoration': 'none',
+    'font-weight': 'bold',
+}
 
 
 @app.callback(
@@ -323,19 +364,57 @@ def update_comparison_table(n_clicks, n_clicks2, first_dropdown1_value, first_dr
 
     table_rows = [header_row]
     for vehicle in selected_vehicles:
-        type1 = html.Td(vehicle['type_of_Vehicle'].iloc[0])
-        brand = html.Td(vehicle['Brand Name'].iloc[0])
-        model = html.Td(vehicle['Model Name'].iloc[0])
-        other = html.Td(vehicle['Other Name'].iloc[0])
+        posted_date = html.Td(vehicle['Posted Date'].iloc[0], style=cell_style)
+        last_updated = html.Td(vehicle['Last Updated Date'].iloc[0], style=cell_style)
+        type1 = html.Td(vehicle['type_of_Vehicle'].iloc[0], style=cell_style)
+        brand = html.Td(vehicle['Brand Name'].iloc[0], style=cell_style)
+        model = html.Td(vehicle['Model Name'].iloc[0], style=cell_style)
+        other = html.Td(vehicle['Other Name'].iloc[0], style=cell_style)
+        price = html.Td(vehicle['price'].iloc[0], style=cell_style)
+        depreciation = html.Td(vehicle['depreciation'].iloc[0], style=cell_style)
+        reg_Date = html.Td(vehicle['reg_Date'].iloc[0], style=cell_style)
+        mileage = html.Td(vehicle['mileage'].iloc[0], style=cell_style)
+        road_Tax = html.Td(vehicle['road_Tax'].iloc[0], style=cell_style)
+        dereg_Value = html.Td(vehicle['dereg_Value'].iloc[0], style=cell_style)
+        COE = html.Td(vehicle['COE'].iloc[0], style=cell_style)
+        engine_Cap = html.Td(vehicle['engine_Cap'].iloc[0], style=cell_style)
+        curb_Weight = html.Td(vehicle['curb_Weight'].iloc[0], style=cell_style)
+        transmission = html.Td(vehicle['transmission'].iloc[0], style=cell_style)
+        OMV = html.Td(vehicle['OMV'].iloc[0], style=cell_style)
+        ARF = html.Td(vehicle['ARF'].iloc[0], style=cell_style)
+        fuel_Type = html.Td(vehicle['fuel_Type'].iloc[0], style=cell_style)
+        dealers_names = html.Td(vehicle['dealers_names'].iloc[0], style=cell_style)
+        Vehicle_Link = html.Td(html.A('More Vehicle Details', href=vehicle['Vehicle Link'].iloc[0]))
+        dealers_links = html.Td(html.A('More Dealers Vehicles', href=vehicle['dealers_links'].iloc[0]))
+
         table_rows.append(html.Tr([
+            posted_date,
+            last_updated,
             type1,
             brand,
             model,
-            other
-        ]))
-    table = html.Table(table_rows)
+            other,
+            price,
+            depreciation,
+            reg_Date,
+            mileage,
+            road_Tax,
+            dereg_Value,
+            COE,
+            engine_Cap,
+            curb_Weight,
+            transmission,
+            OMV,
+            ARF,
+            fuel_Type,
+            dealers_names,
+            Vehicle_Link,
+            dealers_links
 
-    return table
+        ]))
+    table = html.Table(table_rows, style=table_style)
+
+    return html.Div(table, style={'overflowX': 'scroll'})
 
 
 @app.callback(
@@ -404,28 +483,48 @@ def update_vehicle_price_bar_chart2(brand, start_date, end_date):
     filtered_df = df_new.loc[df_new['Posted Date'].between(*date_range)]
 
     if brand == 'all':
-        avg_depreciation_by_type = filtered_df.groupby('type_of_Vehicle')['depreciation'].mean()
-        fig = go.Figure(go.Bar(x=avg_depreciation_by_type.index, y=avg_depreciation_by_type.values,
-                               text=avg_depreciation_by_type.values, textposition='auto'))
+        avg_price_by_type_and_brand = filtered_df.groupby(['Brand Name', 'type_of_Vehicle'])['depreciation'].mean()
+
+        fig = go.Figure()
+
+        for vehicle_type in avg_price_by_type_and_brand.index.get_level_values('Brand Name').unique():
+            avg_price_by_brand = avg_price_by_type_and_brand.xs(vehicle_type, level='Brand Name')
+            fig.add_trace(go.Bar(
+                x=avg_price_by_brand.index,
+                y=avg_price_by_brand.values,
+                name=vehicle_type
+            ))
     else:
-        filtered_df = df_new[(df_new['Brand Name'] == brand)]
-        avg_depreciation_by_type = filtered_df.groupby('type_of_Vehicle')['depreciation'].mean()
-        fig = go.Figure(go.Bar(x=avg_depreciation_by_type.index, y=avg_depreciation_by_type.values,
-                               text=avg_depreciation_by_type.values, textposition='auto'))
+        filtered_df = df_new.loc[(df_new['Brand Name'] == brand)]
+        avg_price_by_type = filtered_df.groupby('type_of_Vehicle')['depreciation'].mean()
+
+        fig = go.Figure(
+            go.Bar(
+                x=avg_price_by_type.index,
+                y=avg_price_by_type.values,
+                text=avg_price_by_type.round().astype(int).astype(str) + " $",
+                textposition='auto'
+            )
+        )
 
     fig.update_layout(
-        xaxis_title="Vehicle Type",
+        xaxis_title="Brand Name",
         yaxis_title="Average Depreciation ($)",
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='rgba(0,0,0,0)',
-
-        margin=dict(l=20, r=20, t=20, b=20),
+        margin=dict(l=20, r=20, t=20, b=60),  # increase the bottom margin to accommodate the x-axis labels
         template='plotly_white',
         autosize=True,
-        font=dict(family="Arial, sans-serif", size=14, color="#7f7f7f"))
+        font=dict(family="Arial, sans-serif", size=14, color="#7f7f7f")
+    )
 
     fig.update_xaxes(showgrid=False, zeroline=False)
     fig.update_yaxes(showgrid=False, zeroline=False)
+
+    # Add a layout shape to display a boundary between two vehicle brands
+    fig.update_layout(
+        barmode='group'  # add this parameter to group the bars by brand
+    )
 
     return fig
 
@@ -435,7 +534,8 @@ def update_vehicle_price_bar_chart2(brand, start_date, end_date):
     [
         dash.dependencies.Input('brand_dropdown4', 'value'),
         dash.dependencies.Input('my-date-picker-range_graph4', 'start_date'),
-        dash.dependencies.Input('my-date-picker-range_graph4', 'end_date'), ]
+        dash.dependencies.Input('my-date-picker-range_graph4', 'end_date')
+    ]
 )
 def update_vehicle_price_bar_chart2(brand, start_date, end_date):
     if start_date is None or end_date is None:
@@ -444,27 +544,48 @@ def update_vehicle_price_bar_chart2(brand, start_date, end_date):
     filtered_df = df_new.loc[df_new['Posted Date'].between(*date_range)]
 
     if brand == 'all':
-        avg_depreciation_by_type = filtered_df.groupby('type_of_Vehicle')['price'].mean()
-        fig = go.Figure(go.Bar(x=avg_depreciation_by_type.index, y=avg_depreciation_by_type.values,
-                               text=avg_depreciation_by_type.values, textposition='auto'))
+        avg_price_by_type_and_brand = filtered_df.groupby(['type_of_Vehicle', 'Brand Name'])['price'].mean()
+
+        fig = go.Figure()
+
+        for vehicle_type in avg_price_by_type_and_brand.index.get_level_values('Brand Name').unique():
+            avg_price_by_brand = avg_price_by_type_and_brand.xs(vehicle_type, level='Brand Name')
+            fig.add_trace(go.Bar(
+                x=avg_price_by_brand.index,
+                y=avg_price_by_brand.values,
+                text=avg_price_by_brand.round().astype(int).astype(str) + " $",
+                name=vehicle_type
+            ))
     else:
-        filtered_df = df_new[(df_new['Brand Name'] == brand)]
-        avg_depreciation_by_type = filtered_df.groupby('type_of_Vehicle')['price'].mean()
-        fig = go.Figure(go.Bar(x=avg_depreciation_by_type.index, y=avg_depreciation_by_type.values,
-                               text=avg_depreciation_by_type.values, textposition='auto'))
+        filtered_df = df_new.loc[(df_new['Brand Name'] == brand)]
+        avg_price_by_type = filtered_df.groupby('type_of_Vehicle')['price'].mean()
+
+        fig = go.Figure(
+            go.Bar(
+                x=avg_price_by_type.index,
+                y=avg_price_by_type.values,
+                text=avg_price_by_type.round().astype(int).astype(str) + " $",
+                textposition='auto'
+            )
+        )
 
     fig.update_layout(
-        xaxis_title="Vehicle Type",
+        xaxis_title="Brand Name",
         yaxis_title="Average Price ($)",
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='rgba(0,0,0,0)',
-
-        margin=dict(l=20, r=20, t=20, b=20),
+        margin=dict(l=20, r=20, t=20, b=60),  # increase the bottom margin to accommodate the x-axis labels
         template='plotly_white',
         autosize=True,
-        font=dict(family="Arial, sans-serif", size=14, color="#7f7f7f"))
+        font=dict(family="Arial, sans-serif", size=14, color="#7f7f7f")
+    )
 
     fig.update_xaxes(showgrid=False, zeroline=False)
     fig.update_yaxes(showgrid=False, zeroline=False)
+
+    # Add a layout shape to display a boundary between two vehicle brands
+    fig.update_layout(
+        barmode='group'  # add this parameter to group the bars by brand
+    )
 
     return fig

@@ -323,12 +323,12 @@ def update_comparison_table(n_clicks, n_clicks2, first_dropdown1_value, first_dr
 
     table_rows = [header_row]
     for vehicle in selected_vehicles:
-        type = html.Td(vehicle['type_of_Vehicle'].iloc[0])
+        type1 = html.Td(vehicle['type_of_Vehicle'].iloc[0])
         brand = html.Td(vehicle['Brand Name'].iloc[0])
         model = html.Td(vehicle['Model Name'].iloc[0])
         other = html.Td(vehicle['Other Name'].iloc[0])
         table_rows.append(html.Tr([
-            type,
+            type1,
             brand,
             model,
             other

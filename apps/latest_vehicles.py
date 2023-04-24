@@ -1,8 +1,11 @@
+import re
+
 import dash
 import dash_bootstrap_components as dbc
 import pandas as pd
 import plotly.graph_objs as go
-from dash import html, dash_table, dcc
+from dash import Input, Output
+from dash import html, dash_table, dcc, State
 
 from app import app
 
@@ -14,8 +17,8 @@ dropdown_options = [{'label': x, 'value': x} for x in df_new['Brand Name'].uniqu
 brand_names = [{'label': str(brand), 'value': brand} for brand in
                sorted(df_new['Brand Name'].unique())]
 
+
 # Define a function to clean and convert the values to numbers
-import re
 
 
 def clean_and_convert(value):
@@ -221,8 +224,8 @@ layout = html.Div([
 
 # first vehicle dropdown
 @app.callback(
-    dash.dependencies.Output('first_dropdown-2', 'options'),
-    dash.dependencies.Input('first_dropdown-1', 'value'))
+    Output('first_dropdown-2', 'options'),
+    Input('first_dropdown-1', 'value'))
 def update_second_dropdown2_options(selected_brand):
     if not selected_brand:
         return []
@@ -232,8 +235,8 @@ def update_second_dropdown2_options(selected_brand):
 
 
 @app.callback(
-    dash.dependencies.Output('first_dropdown-3', 'options'),
-    dash.dependencies.Input('first_dropdown-2', 'value'))
+    Output('first_dropdown-3', 'options'),
+    Input('first_dropdown-2', 'value'))
 def update_second_dropdown3_options(selected_brand):
     if not selected_brand:
         return []
@@ -244,8 +247,8 @@ def update_second_dropdown3_options(selected_brand):
 
 # second vehicle dropdown
 @app.callback(
-    dash.dependencies.Output('second_dropdown-2', 'options'),
-    dash.dependencies.Input('second_dropdown-1', 'value'))
+    Output('second_dropdown-2', 'options'),
+    Input('second_dropdown-1', 'value'))
 def update_second_dropdown2_options(selected_brand):
     if not selected_brand:
         return []
@@ -255,8 +258,8 @@ def update_second_dropdown2_options(selected_brand):
 
 
 @app.callback(
-    dash.dependencies.Output('second_dropdown-3', 'options'),
-    dash.dependencies.Input('second_dropdown-2', 'value'))
+    Output('second_dropdown-3', 'options'),
+    Input('second_dropdown-2', 'value'))
 def update_second_dropdown3_options(selected_brand):
     if not selected_brand:
         return []
@@ -267,8 +270,8 @@ def update_second_dropdown3_options(selected_brand):
 
 # third vehicle dropdown
 @app.callback(
-    dash.dependencies.Output('third_dropdown-2', 'options'),
-    dash.dependencies.Input('third_dropdown-1', 'value'))
+    Output('third_dropdown-2', 'options'),
+    Input('third_dropdown-1', 'value'))
 def update_third_dropdown2_options(selected_brand):
     if not selected_brand:
         return []
@@ -278,8 +281,8 @@ def update_third_dropdown2_options(selected_brand):
 
 
 @app.callback(
-    dash.dependencies.Output('third_dropdown-3', 'options'),
-    dash.dependencies.Input('third_dropdown-2', 'value'))
+    Output('third_dropdown-3', 'options'),
+    Input('third_dropdown-2', 'value'))
 def update_third_dropdown3_options(selected_brand):
     if not selected_brand:
         return []
@@ -340,14 +343,14 @@ link_style = {
 
 
 @app.callback(
-    dash.dependencies.Output('comparison-table', 'children'),
-    [dash.dependencies.Input('first_add_button', 'n_clicks'),
-     dash.dependencies.Input('clear_button', 'n_clicks')],
-    [dash.dependencies.State('first_dropdown-1', 'value'),
-     dash.dependencies.State('first_dropdown-2', 'value'),
-     dash.dependencies.State('first_dropdown-3', 'value')]
+    Output('comparison-table', 'children'),
+    [Input('first_add_button', 'n_clicks'),
+     Input('clear_button', 'n_clicks')],
+    [State('first_dropdown-1', 'value'),
+     State('first_dropdown-2', 'value'),
+     State('first_dropdown-3', 'value')]
 )
-def update_comparison_table(n_clicks, n_clicks2, first_dropdown1_value, first_dropdown2_value, first_dropdown3_value):
+def update_comparison_table(first_dropdown1_value, first_dropdown2_value, first_dropdown3_value):
     global selected_vehicles
 
     ctx = dash.callback_context
@@ -418,8 +421,8 @@ def update_comparison_table(n_clicks, n_clicks2, first_dropdown1_value, first_dr
 
 
 @app.callback(
-    dash.dependencies.Output('newly-added-vehicle', 'children'),
-    dash.dependencies.Input('brand_dropdown2', 'value')
+    Output('newly-added-vehicle', 'children'),
+    Input('brand_dropdown2', 'value')
 )
 def update_vehicle_latest(brand):
     if brand == 'all':
@@ -470,11 +473,11 @@ def update_vehicle_latest(brand):
 
 
 @app.callback(
-    dash.dependencies.Output('vehicle-price-bar-chart-3', 'figure'),
+    Output('vehicle-price-bar-chart-3', 'figure'),
     [
-        dash.dependencies.Input('brand_dropdown3', 'value'),
-        dash.dependencies.Input('my-date-picker-range_graph3', 'start_date'),
-        dash.dependencies.Input('my-date-picker-range_graph3', 'end_date'), ]
+        Input('brand_dropdown3', 'value'),
+        Input('my-date-picker-range_graph3', 'start_date'),
+        Input('my-date-picker-range_graph3', 'end_date'), ]
 )
 def update_vehicle_price_bar_chart2(brand, start_date, end_date):
     if start_date is None or end_date is None:
@@ -530,11 +533,11 @@ def update_vehicle_price_bar_chart2(brand, start_date, end_date):
 
 
 @app.callback(
-    dash.dependencies.Output('vehicle-price-bar-chart-4', 'figure'),
+    Output('vehicle-price-bar-chart-4', 'figure'),
     [
-        dash.dependencies.Input('brand_dropdown4', 'value'),
-        dash.dependencies.Input('my-date-picker-range_graph4', 'start_date'),
-        dash.dependencies.Input('my-date-picker-range_graph4', 'end_date')
+        Input('brand_dropdown4', 'value'),
+        Input('my-date-picker-range_graph4', 'start_date'),
+        Input('my-date-picker-range_graph4', 'end_date')
     ]
 )
 def update_vehicle_price_bar_chart2(brand, start_date, end_date):

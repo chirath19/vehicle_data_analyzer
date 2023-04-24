@@ -270,7 +270,7 @@ layout = html.Div([
     Input('capacity-range-slider', 'value'),
     Input('my-dropdown_selling_types', 'value')
 )
-def update_table(year, vehicle_type, vehicle_status, start_date, end_date, miles_range, capacity_range, selling_type):
+def update_table(year, vehicle_type, vehicle_statu, start_date, end_date, miles_range, capacity_range, selling_type):
     # Check if date range is None before unpacking it
     if start_date is None or end_date is None:
         return []
@@ -287,7 +287,7 @@ def update_table(year, vehicle_type, vehicle_status, start_date, end_date, miles
     if vehicle_type != 'all':
         filtered_df = filtered_df.loc[filtered_df['Vehicle Type'] == vehicle_type]
     if vehicle_status != 'all':
-        filtered_df = filtered_df.loc[filtered_df['Vehicle Status'] == vehicle_status]
+        filtered_df = filtered_df.loc[filtered_df['Vehicle Status'] == vehicle_statu]
     if selling_type != 'all':
         filtered_df = filtered_df.loc[filtered_df['Selling Type'] == selling_type]
 
